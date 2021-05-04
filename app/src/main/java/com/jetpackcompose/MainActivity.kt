@@ -3,18 +3,35 @@ package com.jetpackcompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.focusModifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.jetpackcompose.ui.theme.JetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Greeting(name = "Jetpack Compose")
+            Column (
+                modifier = Modifier
+                    .background(Color.Green)
+                    .fillMaxHeight(0.5f)
+                    .fillMaxWidth()
+                    .padding(top = 60.dp)
+//                    .requiredWidth(600.dp)
+            ){
+                Text(text = "Hello")
+                Text(text = "World")
+            }
         }
     }
 }
